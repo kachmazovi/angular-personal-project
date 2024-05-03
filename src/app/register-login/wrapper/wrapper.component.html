@@ -1,3 +1,12 @@
-<p>wrapper works!</p>
-
-<router-outlet></router-outlet>
+<div class="main-container">
+    <div class="left-side"></div>
+    <div class="right-side">
+        <div class="wrapper">
+            <nav>
+                <a routerLink="login" routerLinkActive="active" class="nav-item">ავტორიზაცია</a>
+                <a routerLink="register" routerLinkActive="active" class="nav-item">რეგისტრაცია</a>
+            </nav>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
