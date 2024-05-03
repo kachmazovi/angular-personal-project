@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user-not-logged',
+    redirectTo: 'user-not-logged/login',
     pathMatch: 'full'
   },
   {

@@ -4,13 +4,15 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 
 
 @NgModule({
   declarations: [
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    WrapperComponent
   ],
   imports: [
     CommonModule,
@@ -18,17 +20,18 @@ import { SharedModule } from '../shared/shared.module';
     RouterModule.forChild([
       {
         path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
+        component: WrapperComponent,
+        children: [
+            {
+              path: 'login',
+              component: LoginComponent
+            },
+            {
+              path: 'register',
+              component: RegisterComponent
+            }
+        ]
       },
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
-      }
     ])
   ]
 })
