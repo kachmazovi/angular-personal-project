@@ -1,3 +1,32 @@
+.my-input {
+    background: none;
+    border: none;
+    height: 40px;
+    color: white;
+    outline: none;
+    border-bottom: 2px solid white;
+    transition: all 0.3s linear;
+}
+
+.my-btn {
+    width: 100%;
+    color: white;
+    background: none;
+    border: 0.5px solid white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.not-allowed {
+    cursor: not-allowed;
+}
+
 .martop10 {
     margin-top: 10px;
 }
@@ -6,4 +35,13 @@
 }
 .martop20 {
     margin-top: 20px;
+}
+.marbot10 {
+    margin-bottom: 10px;
+}
+.marbot15 {
+    margin-bottom: 15px;
+}
+.marbot20 {
+    margin-bottom: 20px;
 }
