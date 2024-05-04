@@ -5,21 +5,29 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user-not-logged/login',
-    pathMatch: 'full'
+    redirectTo: 'dashboard/inbox',
+    pathMatch: 'full',
   },
   {
     path: 'user-not-logged',
-    loadChildren: () => import('./register-login/register-login.module').then(m => m.RegisterLoginModule)
+    loadChildren: () =>
+      import('./register-login/register-login.module').then(
+        (m) => m.RegisterLoginModule
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: '**',
-    component: PageNotFoundComponent
-  }
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

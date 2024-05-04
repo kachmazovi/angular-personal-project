@@ -23,14 +23,6 @@
   transition: all 0.3s linear;
 }
 
-.pointer {
-  cursor: pointer;
-}
-
-.not-allowed {
-  cursor: not-allowed;
-}
-
 .martop10 {
   margin-top: 10px;
 }
@@ -48,4 +40,71 @@
 }
 .marbot20 {
   margin-bottom: 20px;
+}
+
+// colors
+
+.i-white {
+  color: white;
+}
+
+// font-size
+
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.fz-18 {
+  font-size: 18px;
+}
+
+.fz-20 {
+  font-size: 20px;
+}
+
+.fz-30 {
+  font-size: 30px;
+}
+
+.fz-40i {
+  font-size: 40px !important;
+}
+
+///////////////////////
+
+.pointer {
+  cursor: pointer;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+// icons
+
+i:hover {
+  animation: icon-hover 0.2s linear 2;
+}
+
+@keyframes icon-hover {
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(45deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
