@@ -1,58 +1,61 @@
 .main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/login-page/login-background.jpg");
+  background-attachment: fixed;
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
+  .left-side,
+  .right-side {
+    width: 50%;
+    height: 100%;
+  }
+
+  .right-side {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    background-image: url('../../../assets/images/login-page/login-background.jpg');
-    background-attachment:fixed;
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    
-    .left-side, .right-side {
-        width: 50%;
-        height: 100%;
+    align-content: space-between;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding-top: 10%;
+  }
+
+  .wrapper {
+    width: 80%;
+    min-height: 100px;
+    padding: 20px;
+    border: 5px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    nav {
+      width: 70%;
+      display: flex;
+      justify-content: space-around;
+
+      .nav-item {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        padding-bottom: 10px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .active {
+        color: rgb(93 0 241);
+        border-bottom: 3px solid rgb(93 0 241);
+      }
     }
-
-    .right-side {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-        backdrop-filter: blur(10px);
-    }
-
-    .wrapper {
-        width: 80%;
-        min-height: 100px;
-        padding: 20px;
-        border: 5px solid white;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        nav {
-            width: 70%;
-            display: flex;
-            justify-content: space-around;
-
-            .nav-item {
-                font-size: 20px;
-                font-weight: bold;
-                color: white;
-                padding-bottom: 10px;
-                transition: all 0.3s ease-in-out;
-            }
-
-            .active {
-                color: rgb(93 0 241);
-                border-bottom: 3px solid rgb(93 0 241);
-            }
-        }
-    }
+  }
 }

@@ -1,1 +1,72 @@
-<p>register works!</p>
+<form [formGroup]="userForm" class="marbot20">
+  <input
+    [ngClass]="{ 'input-error': hasFormControlError('name') }"
+    appMyInput
+    formControlName="name"
+    type="text"
+    placeholder="სახელი"
+  />
+  <input
+    [ngClass]="{ 'input-error': hasFormControlError('surname') }"
+    appMyInput
+    formControlName="surname"
+    type="text"
+    placeholder="გვარი"
+  />
+  <input
+    [ngClass]="{ 'input-error': hasFormControlError('email') }"
+    appMyInput
+    formControlName="email"
+    type="text"
+    placeholder="მეილი"
+  />
+  <app-err-msg
+    *ngIf="
+      hasFormControlError('email') && userForm.get('email')?.hasError('email')
+    "
+    message="არასწორი მეილის ფორმატი"
+  ></app-err-msg>
+  <form formGroupName="passwordGroup">
+    <input
+      [ngClass]="{ 'input-error': hasFormControlError('passwordGroup') }"
+      appMyInput
+      formControlName="password"
+      type="password"
+      placeholder="პაროლი"
+    />
+    <input
+      [ngClass]="{ 'input-error': hasFormControlError('passwordGroup') }"
+      appMyInput
+      formControlName="confirmPassword"
+      type="password"
+      placeholder="გაიმეორეთ პაროლი"
+    />
+    <app-err-msg
+      *ngIf="
+        hasFormControlError('passwordGroup') &&
+        userForm.get('passwordGroup')?.hasError('passwordMatch')
+      "
+      message="პაროლები არ ემთხვევა"
+    ></app-err-msg>
+  </form>
+  <form formGroupName="address">
+    <input appMyInput formControlName="city" type="text" placeholder="ქალაქი" />
+    <input appMyInput formControlName="street" type="text" placeholder="ქუჩა" />
+  </form>
+  <div>
+    <input
+      id="terms"
+      appMyInput
+      formControlName="terms"
+      type="checkbox"
+      placeholder="პაროლი"
+    />
+    <span
+      for="terms"
+      class="pointer"
+      (click)="userForm.get('terms')?.setValue(!userForm.get('terms')?.value)"
+      >*Agree on Terms</span
+    >
+  </div>
+</form>
+<button appMyBtn [disabled]="userForm.invalid">რეგისტრაცია</button>

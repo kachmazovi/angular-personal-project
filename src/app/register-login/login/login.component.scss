@@ -1,12 +1,10 @@
-
-
 form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    
-    ::placeholder {
-        color: white;
-    }
-    
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  ::placeholder {
+    color: white;
+    font-size: 16px;
+  }
 }
