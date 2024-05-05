@@ -69,4 +69,6 @@
     >
   </div>
 </form>
-<button appMyBtn [disabled]="userForm.invalid">რეგისტრაცია</button>
+<button appMyBtn [disabled]="userForm.invalid" (click)="register()">
+  რეგისტრაცია
+</button>

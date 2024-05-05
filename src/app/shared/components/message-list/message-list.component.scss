@@ -1,0 +1,37 @@
+.item {
+  border-bottom: 2px solid white;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+  position: relative;
+
+  .message-sender {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .message-subject {
+    color: #a7fdb1;
+  }
+
+  .message-body {
+    color: #00ffd2;
+  }
+}
+
+.unread {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #35039b;
+}
+
+pagination-controls {
+  position: absolute;
+  bottom: 0;
+}

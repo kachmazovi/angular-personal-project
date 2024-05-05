@@ -44,7 +44,7 @@
 
 // colors
 
-.i-white {
+.c-white {
   color: white;
 }
 
@@ -88,6 +88,15 @@
   cursor: not-allowed;
 }
 
+.no-messages {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 45px;
+}
+
 // icons
 
 i:hover {
@@ -107,4 +116,14 @@ i:hover {
   100% {
     transform: rotate(0deg);
   }
+}
+
+// display flex
+
+.d-flex {
+  display: flex;
+}
+
+.jc-btw {
+  justify-content: space-between;
 }

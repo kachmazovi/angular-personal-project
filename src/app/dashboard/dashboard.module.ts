@@ -4,8 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { OutboxComponent } from './components/outbox/outbox.component';
-import { ImportantComponent } from './components/important/important.component';
-import { DeletedComponent } from './components/deleted/deleted.component';
+import { SharedModule } from '../shared/shared.module';
+import { MessageRestService } from './services/message.rest.service';
 
 const routes: Routes = [
   {
@@ -20,20 +20,13 @@ const routes: Routes = [
         path: 'outbox',
         component: OutboxComponent,
       },
-      {
-        path: 'important',
-        component: ImportantComponent,
-      },
-      {
-        path: 'deleted',
-        component: DeletedComponent,
-      },
     ],
   },
 ];
 
 @NgModule({
-  declarations: [DashboardComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [DashboardComponent, InboxComponent, OutboxComponent],
+  imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
+  providers: [MessageRestService],
 })
 export class DashboardModule {}

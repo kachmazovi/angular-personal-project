@@ -5,15 +5,10 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { WrapperComponent } from './wrapper/wrapper.component';
-
-
+import { RegisterLoginRestService } from './services/register-login.rest.service';
 
 @NgModule({
-  declarations: [
-    RegisterComponent,
-    LoginComponent,
-    WrapperComponent
-  ],
+  declarations: [RegisterComponent, LoginComponent, WrapperComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -22,17 +17,18 @@ import { WrapperComponent } from './wrapper/wrapper.component';
         path: '',
         component: WrapperComponent,
         children: [
-            {
-              path: 'login',
-              component: LoginComponent
-            },
-            {
-              path: 'register',
-              component: RegisterComponent
-            }
-        ]
+          {
+            path: 'login',
+            component: LoginComponent,
+          },
+          {
+            path: 'register',
+            component: RegisterComponent,
+          },
+        ],
       },
-    ])
-  ]
+    ]),
+  ],
+  providers: [RegisterLoginRestService],
 })
-export class RegisterLoginModule { }
+export class RegisterLoginModule {}

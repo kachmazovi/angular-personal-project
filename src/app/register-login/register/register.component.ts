@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { passwordMatchValidator } from './validators';
+import { RegisterLoginRestService } from '../services/register-login.rest.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -34,10 +36,19 @@ export class RegisterComponent {
     terms: new FormControl(false, [Validators.requiredTrue]),
   });
 
+  constructor(
+    private registerServ: RegisterLoginRestService,
+    private router: Router
+  ) {}
+
   public hasFormControlError(name: string): boolean {
     return (
       (this.userForm.get(name)?.invalid && this.userForm.get(name)?.touched) ||
       false
     );
+  }
+
+  public register() {
+    this.router.navigate(['/user-not-logged/login']);
   }
 }
