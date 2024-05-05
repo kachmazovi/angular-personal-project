@@ -127,3 +127,12 @@ i:hover {
 .jc-btw {
   justify-content: space-between;
 }
+
+// forms
+
+form {
+  ::placeholder {
+    color: white;
+    font-size: 16px;
+  }
+}

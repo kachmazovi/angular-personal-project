@@ -1,0 +1,31 @@
+<form [formGroup]="createMessageForm">
+  <input
+    appMyInput
+    formControlName="receiverMail"
+    type="text"
+    placeholder="შეიყვანეთ მეილი"
+    [ngClass]="{ 'input-error': hasFormControlError('receiverMail') }"
+  />
+  <input
+    appMyInput
+    formControlName="subject"
+    type="text"
+    placeholder="შეიყვანეთ თემა"
+    [ngClass]="{ 'input-error': hasFormControlError('subject') }"
+  />
+  <textarea
+    [ngClass]="{ 'input-error': hasFormControlError('body') }"
+    appMyInput
+    formControlName="body"
+    name=""
+  ></textarea>
+</form>
+
+<button
+  (click)="onSubmit()"
+  class="send-button"
+  [disabled]="createMessageForm.invalid"
+  appMyBtn
+>
+  გაგზავნა
+</button>
