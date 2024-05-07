@@ -1,9 +1,7 @@
-<ng-container
-  *ngFor="
+<ng-container *ngFor="
     let msg of messages | paginate : { itemsPerPage: 6, currentPage: page }
-  "
->
-  <div class="pointer item">
+  ">
+  <div (click)="viewMessage.emit(msg.id)" class="pointer item">
     <div class="d-flex jc-btw">
       <h1 class="message-sender c-white">{{ inbox ? msg.from : msg.to }}</h1>
       <p class="message-date c-white">{{ msg.date | date }}</p>

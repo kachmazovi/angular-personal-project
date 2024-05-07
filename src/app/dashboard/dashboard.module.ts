@@ -39,4 +39,4 @@ const routes: Routes = [
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   providers: [MessageRestService],
 })
-export class DashboardModule {}
+export class DashboardModule { }

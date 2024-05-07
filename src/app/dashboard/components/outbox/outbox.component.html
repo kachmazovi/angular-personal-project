@@ -1,9 +1,9 @@
 <div class="wrapper" *ngIf="$messages | async as messages">
   <div class="message-items">
-    <app-message-list [messages]="messages" [inbox]="false"></app-message-list>
+    <app-message-list [messages]="messages" [inbox]="false" (viewMessage)="selectMessage($event)"></app-message-list>
   </div>
   <div class="message-body">
-    <router-outlet></router-outlet>
+    <app-message-body-view [message]="selectedMessage$ | async"></app-message-body-view>
     <p *ngIf="!messages?.length" class="no-messages">მეილები არ მოიძებნა</p>
   </div>
 </div>

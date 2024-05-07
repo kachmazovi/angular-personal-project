@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IMessage } from '../../../dashboard/interfaces/messages.interface';
 
 @Component({
@@ -9,6 +9,7 @@ import { IMessage } from '../../../dashboard/interfaces/messages.interface';
 export class MessageListComponent {
   @Input() messages: IMessage[] = [];
   @Input() inbox: boolean = false;
+  @Output() viewMessage = new EventEmitter<string>();
 
   public page: number = 1;
 }

@@ -10,6 +10,7 @@ import { MessageListComponent } from './components/message-list/message-list.com
 import { MsgSubjPipe } from './pipes/msg-subj.pipe';
 import { MsgBodyPipe } from './pipes/msg-body.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MessageBodyViewComponent } from './components/message-body-view/message-body-view.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MessageListComponent,
     MsgSubjPipe,
     MsgBodyPipe,
+    MessageBodyViewComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MessageListComponent,
     MsgSubjPipe,
     MsgBodyPipe,
+    MessageBodyViewComponent
   ],
 })
-export class SharedModule {}
+export class SharedModule { }
