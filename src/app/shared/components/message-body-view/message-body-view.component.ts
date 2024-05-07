@@ -4,9 +4,10 @@ import { IMessage } from '../../../dashboard/interfaces/messages.interface';
 @Component({
   selector: 'app-message-body-view',
   templateUrl: './message-body-view.component.html',
-  styleUrl: './message-body-view.component.scss'
+  styleUrl: './message-body-view.component.scss',
 })
 export class MessageBodyViewComponent implements OnChanges {
+  @Input() inbox: boolean = true;
   @Input() message: IMessage | null = null;
 
   ngOnChanges(changes: SimpleChanges): void {

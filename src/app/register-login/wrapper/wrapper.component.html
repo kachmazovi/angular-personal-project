@@ -1,12 +1,23 @@
 <div class="main-container">
-    <div class="left-side"></div>
-    <div class="right-side">
-        <div class="wrapper">
-            <nav class="marbot20">
-                <a routerLink="login" routerLinkActive="active" class="nav-item">ავტორიზაცია</a>
-                <a routerLink="register" routerLinkActive="active" class="nav-item">რეგისტრაცია</a>
-            </nav>
-            <router-outlet></router-outlet>
-        </div>
+  <div class="left-side"></div>
+  <div class="right-side">
+    <div class="wrapper">
+      <nav class="marbot20">
+        <a routerLink="login" routerLinkActive="active" class="nav-item"
+          >ავტორიზაცია</a
+        >
+        <a routerLink="register" routerLinkActive="active" class="nav-item"
+          >რეგისტრაცია</a
+        >
+        <a
+          routerLink="../dashboard/inbox"
+          routerLinkActive="active"
+          class="nav-item"
+          >დეშბორდი</a
+        >
+      </nav>
+      <router-outlet></router-outlet>
     </div>
+  </div>
 </div>
+>

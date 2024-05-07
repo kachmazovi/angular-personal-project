@@ -1,1 +1,8 @@
-<p>message-body-view works!</p>
+<div class="wrapper">
+  <p class="mail">
+    <span>{{ inbox ? message?.from : message?.to }}</span>
+    <span>{{ message?.date | date : "long" }}</span>
+  </p>
+  <p class="subject">{{ message?.subject }}</p>
+  <p class="body">{{ message?.body }}</p>
+</div>
