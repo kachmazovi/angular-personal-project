@@ -1,5 +1,5 @@
 export interface IUserData {
-  id: string;
+  id?: string;
   name: string;
   surname: string;
   email: string;
@@ -8,4 +8,9 @@ export interface IUserData {
     street: string;
     city: string;
   };
+}
+
+export interface ILoginUser {
+  mail: string;
+  password: string;
 }

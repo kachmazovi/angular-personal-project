@@ -1,15 +1,15 @@
 <form [formGroup]="userForm" class="marbot20">
   <input
     appMyInput
-    formControlName="username"
+    formControlName="mail"
     type="text"
     placeholder="მეილი"
   />
   <input
     appMyInput
     formControlName="password"
-    type="text"
+    type="password"
     placeholder="პაროლი"
   />
 </form>
-<button appMyBtn [disabled]="userForm.invalid">ავტორიზაცია</button>
+<button appMyBtn [disabled]="userForm.invalid" (click)="login()">ავტორიზაცია</button>

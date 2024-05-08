@@ -7,6 +7,7 @@ import { IUserData } from '../../register-login/interfaces/register.interface';
 export class UserService {
   public logedUser: IUserData | null = null;
   public allUsers: IUserData[] = [];
+  public isAdmin: boolean = false;
 
   public get isUserLoged(): boolean {
     return !!this.logedUser;

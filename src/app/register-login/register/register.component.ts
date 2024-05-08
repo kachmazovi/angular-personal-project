@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { passwordMatchValidator } from './validators';
 import { RegisterLoginRestService } from '../services/register-login.rest.service';
 import { Router } from '@angular/router';
+import { catchError, of, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-register',
@@ -49,6 +50,28 @@ export class RegisterComponent {
   }
 
   public register() {
-    this.router.navigate(['/user-not-logged/login']);
+    const userData = {
+      name: this.userForm.get('name')?.value as string,
+      surname: this.userForm.get('surname')?.value as string,
+      email: this.userForm.get('email')?.value as string,
+      password: this.userForm.get('passwordGroup')?.get('password')?.value as string,
+      address: {
+        street: this.userForm.get('address')?.get('street')?.value as string,
+        city: this.userForm.get('address')?.get('city')?.value as string,
+      },
+    }
+
+    this.registerServ.registerUSer(userData).pipe(
+      switchMap((user) => {
+        return this.registerServ.addMailDadaForUser(user.id as string);
+      }),
+      tap(() => {
+        this.router.navigate(['/user-not-logged/login']);
+      }),
+      catchError(() => {
+        console.log('Error registering user');
+        return of(null)
+      })
+    ).subscribe();
   }
 }

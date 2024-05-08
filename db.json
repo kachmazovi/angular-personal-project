@@ -1,4 +1,66 @@
 {
-  "users": [],
-  "messages": []
+  "users": [
+    {
+      "id": "4323",
+      "name": "jane",
+      "surname": "doe",
+      "email": "janedoe@mail",
+      "password": "Janedoe123",
+      "address": {
+        "street": "",
+        "city": "თბილისი"
+      }
+    },
+    {
+      "id": "4189",
+      "name": "jane",
+      "surname": "doe",
+      "email": "janedoe@mail.com",
+      "password": "Janedoe123",
+      "address": {
+        "street": "",
+        "city": "თბილისი"
+      }
+    },
+    {
+      "id": "4390",
+      "name": "jane",
+      "surname": "doe",
+      "email": "janedoe@mail.com",
+      "password": "Janedoe123",
+      "address": {
+        "street": "",
+        "city": "თბილისი"
+      }
+    },
+    {
+      "id": "4300",
+      "name": "jane",
+      "surname": "doe",
+      "email": "janedoe@mail.com",
+      "password": "Janedoe123",
+      "address": {
+        "street": "",
+        "city": "თბილისი"
+      }
+    }
+  ],
+  "messages": [
+    {
+      "id": "4323",
+      "messages": []
+    },
+    {
+      "id": "4189",
+      "messages": []
+    },
+    {
+      "id": "4390",
+      "messages": []
+    },
+    {
+      "id": "4300",
+      "messages": []
+    }
+  ]
 }
