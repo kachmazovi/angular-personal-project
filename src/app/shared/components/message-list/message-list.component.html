@@ -1,6 +1,8 @@
-<ng-container *ngFor="
+<ng-container
+  *ngFor="
     let msg of messages | paginate : { itemsPerPage: 6, currentPage: page }
-  ">
+  "
+>
   <div (click)="viewMessage.emit(msg.id)" class="pointer item">
     <div class="d-flex jc-btw">
       <h1 class="message-sender c-white">{{ inbox ? msg.from : msg.to }}</h1>
@@ -13,7 +15,7 @@
     <p class="message-body">
       {{ msg.body | msgBody }}
     </p>
-    <span [ngClass]="{ unread: !msg.read }"></span>
+    <span [ngClass]="{ unread: !msg.read && inbox }"></span>
   </div>
 </ng-container>
 <pagination-controls (pageChange)="page = $event"></pagination-controls>

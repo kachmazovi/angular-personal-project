@@ -50,17 +50,27 @@
       "id": "4323",
       "messages": [
         {
-          "to": "janedoe2@mail.com",
-          "subject": "subject",
-          "body": "new message",
-          "date": "2024-05-11T16:26:02.263Z",
+          "id": "yyqwfncfj",
+          "to": "janedoe3@mail.com",
+          "subject": "subject 1",
+          "body": "new message 1",
+          "date": "2024-05-11T17:02:45.389Z",
           "read": false
         },
         {
-          "to": "asdasd@asdsa",
-          "subject": "subject",
-          "body": "asdasdas",
-          "date": "2024-05-11T16:31:17.036Z",
+          "id": "uds6eylsm",
+          "to": "janedoe3@mail.com",
+          "subject": "subject 2",
+          "body": "new message 2",
+          "date": "2024-05-11T17:02:56.942Z",
+          "read": false
+        },
+        {
+          "id": "7rza9ul3b",
+          "to": "janedoe3@mail.com",
+          "subject": "subject 3",
+          "body": "new message 3",
+          "date": "2024-05-11T17:03:06.508Z",
           "read": false
         }
       ]
@@ -71,34 +81,37 @@
     },
     {
       "id": "4390",
-      "messages": [
-        {
-          "to": null,
-          "subject": "subject",
-          "body": "new message",
-          "date": "2024-05-11T16:26:02.263Z",
-          "read": false,
-          "from": "janedoe@mail"
-        },
-        {
-          "to": "janedoe3@mail.com",
-          "subject": "subject 1",
-          "body": "new message",
-          "date": "2024-05-11T16:28:03.800Z",
-          "read": false
-        }
-      ]
+      "messages": []
     },
     {
       "id": "4300",
       "messages": [
         {
+          "id": "yyqwfncfj",
           "to": null,
           "subject": "subject 1",
-          "body": "new message",
-          "date": "2024-05-11T16:28:03.800Z",
-          "read": false,
-          "from": "janedoe2@mail.com"
+          "body": "new message 1",
+          "date": "2024-05-11T17:02:45.389Z",
+          "read": true,
+          "from": "janedoe@mail"
+        },
+        {
+          "id": "uds6eylsm",
+          "to": null,
+          "subject": "subject 2",
+          "body": "new message 2",
+          "date": "2024-05-11T17:02:56.942Z",
+          "read": true,
+          "from": "janedoe@mail"
+        },
+        {
+          "id": "7rza9ul3b",
+          "to": null,
+          "subject": "subject 3",
+          "body": "new message 3",
+          "date": "2024-05-11T17:03:06.508Z",
+          "read": true,
+          "from": "janedoe@mail"
         }
       ]
     }

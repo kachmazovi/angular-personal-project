@@ -21,6 +21,7 @@ export class MessageRestService {
     };
 
     userMessages.push(message);
+    this.messages$.next(userMessages);
 
     return this.http
       .put<IMessage>(
@@ -58,6 +59,18 @@ export class MessageRestService {
           );
         })
       );
+  }
+
+  public readMessage(messages: IMessage[]): Observable<IUserMessages> {
+    this.messages$.next(messages);
+
+    return this.http.put<IUserMessages>(
+      `http://localhost:3000/messages/${this.userServ.logedUser?.id}`,
+      {
+        id: this.userServ.logedUser?.id,
+        messages,
+      }
+    );
   }
 
   public getMessage(id: string): IMessage | null {

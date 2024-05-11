@@ -20,6 +20,7 @@ export class CreateMessageComponent {
 
   public onSubmit() {
     const message: IMessage = {
+      id: Math.random().toString(36).substr(2, 9),
       to: this.createMessageForm.get('receiverMail')?.value,
       subject: this.createMessageForm.get('subject')?.value as string,
       body: this.createMessageForm.get('body')?.value as string,
