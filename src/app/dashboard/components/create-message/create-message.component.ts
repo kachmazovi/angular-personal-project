@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MessageRestService } from '../../services/message.rest.service';
+import { IMessage } from '../../interfaces/messages.interface';
+import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-create-message',
@@ -13,8 +16,24 @@ export class CreateMessageComponent {
     body: new FormControl('', [Validators.required]),
   });
 
+  constructor(private messageRestServ: MessageRestService) {}
+
   public onSubmit() {
-    console.log(this.createMessageForm.value);
+    const message: IMessage = {
+      to: this.createMessageForm.get('receiverMail')?.value,
+      subject: this.createMessageForm.get('subject')?.value as string,
+      body: this.createMessageForm.get('body')?.value as string,
+      date: new Date().toISOString(),
+      read: false,
+    };
+    this.messageRestServ
+      .createMessage(message)
+      .pipe(
+        tap(() => {
+          this.createMessageForm.reset();
+        })
+      )
+      .subscribe();
   }
 
   public hasFormControlError(name: string): boolean {

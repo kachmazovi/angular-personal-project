@@ -7,3 +7,8 @@ export interface IMessage {
   date: string;
   read: boolean;
 }
+
+export interface IUserMessages {
+  id: string;
+  messages: IMessage[];
+}

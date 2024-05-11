@@ -15,7 +15,7 @@
       "id": "4189",
       "name": "jane",
       "surname": "doe",
-      "email": "janedoe@mail.com",
+      "email": "janedoe1@mail.com",
       "password": "Janedoe123",
       "address": {
         "street": "",
@@ -26,7 +26,7 @@
       "id": "4390",
       "name": "jane",
       "surname": "doe",
-      "email": "janedoe@mail.com",
+      "email": "janedoe2@mail.com",
       "password": "Janedoe123",
       "address": {
         "street": "",
@@ -37,7 +37,7 @@
       "id": "4300",
       "name": "jane",
       "surname": "doe",
-      "email": "janedoe@mail.com",
+      "email": "janedoe3@mail.com",
       "password": "Janedoe123",
       "address": {
         "street": "",
@@ -48,7 +48,22 @@
   "messages": [
     {
       "id": "4323",
-      "messages": []
+      "messages": [
+        {
+          "to": "janedoe2@mail.com",
+          "subject": "subject",
+          "body": "new message",
+          "date": "2024-05-11T16:26:02.263Z",
+          "read": false
+        },
+        {
+          "to": "asdasd@asdsa",
+          "subject": "subject",
+          "body": "asdasdas",
+          "date": "2024-05-11T16:31:17.036Z",
+          "read": false
+        }
+      ]
     },
     {
       "id": "4189",
@@ -56,11 +71,36 @@
     },
     {
       "id": "4390",
-      "messages": []
+      "messages": [
+        {
+          "to": null,
+          "subject": "subject",
+          "body": "new message",
+          "date": "2024-05-11T16:26:02.263Z",
+          "read": false,
+          "from": "janedoe@mail"
+        },
+        {
+          "to": "janedoe3@mail.com",
+          "subject": "subject 1",
+          "body": "new message",
+          "date": "2024-05-11T16:28:03.800Z",
+          "read": false
+        }
+      ]
     },
     {
       "id": "4300",
-      "messages": []
+      "messages": [
+        {
+          "to": null,
+          "subject": "subject 1",
+          "body": "new message",
+          "date": "2024-05-11T16:28:03.800Z",
+          "read": false,
+          "from": "janedoe2@mail.com"
+        }
+      ]
     }
   ]
 }
