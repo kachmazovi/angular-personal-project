@@ -1,22 +1,49 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageRestService } from '../../services/message.rest.service';
 import { IMessage } from '../../interfaces/messages.interface';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
+import { UserService } from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-create-message',
   templateUrl: './create-message.component.html',
   styleUrl: './create-message.component.scss',
 })
-export class CreateMessageComponent {
+export class CreateMessageComponent implements OnInit {
   public createMessageForm = new FormGroup({
     receiverMail: new FormControl('', [Validators.required, Validators.email]),
     subject: new FormControl('', [Validators.required]),
     body: new FormControl('', [Validators.required]),
   });
 
-  constructor(private messageRestServ: MessageRestService) {}
+  public receiverUsersEmails: string[] = [];
+
+  public receiverUsers$ = new BehaviorSubject<string[]>([]);
+
+  constructor(
+    private messageRestServ: MessageRestService,
+    private userServ: UserService
+  ) {}
+
+  ngOnInit(): void {
+    this.receiverUsersEmails = this.userServ.allUsers.map((user) => user.email);
+
+    this.createMessageForm
+      .get('receiverMail')
+      ?.valueChanges.pipe(
+        tap((email) => {
+          if (email && email?.length > 3) {
+            this.receiverUsers$.next(
+              this.receiverUsersEmails.filter((userEmail) =>
+                userEmail.includes(email)
+              )
+            );
+          }
+        })
+      )
+      .subscribe();
+  }
 
   public onSubmit() {
     const message: IMessage = {
@@ -35,6 +62,11 @@ export class CreateMessageComponent {
         })
       )
       .subscribe();
+  }
+
+  public selectReceiver(email: string) {
+    this.createMessageForm.get('receiverMail')?.setValue(email);
+    this.receiverUsers$.next([]);
   }
 
   public hasFormControlError(name: string): boolean {

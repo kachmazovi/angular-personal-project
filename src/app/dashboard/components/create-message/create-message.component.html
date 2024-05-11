@@ -19,6 +19,14 @@
     formControlName="body"
     name=""
   ></textarea>
+
+  <ng-container *ngIf="receiverUsers$ | async as receiverUsers">
+    <div *ngIf="receiverUsers.length" class="receiver-users">
+      <ng-container *ngFor="let user of receiverUsers">
+        <span (click)="selectReceiver(user)"> {{ user }} </span>
+      </ng-container>
+    </div>
+  </ng-container>
 </form>
 
 <button
